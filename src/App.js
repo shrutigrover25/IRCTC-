@@ -1,10 +1,9 @@
 import React from "react";
-import Register from "./Week2/Register";
-
+import HomePage from "./Week1/HomePage";
 const App = () => {
   return (
     <div>
-      <Register></Register>
+      <HomePage></HomePage>
     </div>
   );
 };
