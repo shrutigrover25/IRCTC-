@@ -1,12 +1,12 @@
-import "./App.css";
-import HomePage from "./HomePage";
+import React from "react";
+import Register from "./Week2/Register";
 
-function App() {
+const App = () => {
   return (
     <div>
-      <HomePage></HomePage>
+      <Register></Register>
     </div>
   );
-}
+};
 
 export default App;
