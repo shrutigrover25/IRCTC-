@@ -1,27 +1,21 @@
 import React, { useState, useEffect } from "react";
 import Header from "../Week2/Header";
 import "./HomePage.css"; // Import the CSS file for styling
+import useForm from "../Week5/UseForm"; // Import custom hook
 
 const HomePage = () => {
-  const [formData, setFormData] = useState({ from: "", to: "", date: "" });
+  const [formData, handleChange] = useForm({ from: "", to: "", date: "" });
   const [trainList, setTrainList] = useState([]); // State for storing train data
   const [isLoading, setIsLoading] = useState(false); // Loading state for API calls
-
-  // Handle form input changes
-  const handleChange = (event) => {
-    const { id, value } = event.target;
-    setFormData({ ...formData, [id]: value });
-  };
 
   // Handle form submission
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Log form data on submission
     console.log("Form submitted:", formData);
     setIsLoading(true); // Start loading when form is submitted
   };
 
-  // useEffect for making an API call whenever formData changes (after form submission)
+  // Mimic componentDidMount and componentDidUpdate with useEffect
   useEffect(() => {
     if (isLoading) {
       // Simulate API call
